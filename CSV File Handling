@@ -46,7 +46,7 @@ def write_csv_file(csv_table, file_name):
     """
     
     openfile = open(file_name, "w", newline='')
-    writer = csv.writer(openfile, delimiter=' ')
+    writer = csv.writer(openfile, delimiter=',')
     
     for item in csv_table:
         writer.writerow(item)
