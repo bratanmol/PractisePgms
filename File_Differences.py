@@ -22,18 +22,20 @@ def singleline_diff(line1, line2):
     length1=len(line1)
     length2=len(line2)
     
+    if length1 == 0 and length2== 0:
+        return IDENTICAL
+    
     if length1<=length2:
         length = length1
     else:
         length = length2
         
-    if len(line1) == 0 and len(line2)== 0:
-        return IDENTICAL
     
-    if length!=0:        
-        for index in range(0,length):
-            if line1[index] != line2[index]:
-                return index
+    
+    #if length!=0:        
+    for index in range(0,length):
+        if line1[index] != line2[index]:
+            return index
     #if one of the line is prefix of the other
     if length1 != length2:
         return length
